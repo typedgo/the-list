@@ -1,0 +1,52 @@
+{{define "markdown-page"}}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypedGo - Tools to Go type safe</title>
+
+    <meta name="title" content="TypedGo - Tools to Go type safe">
+    <meta name="description" content="Tools to Go type safe.">
+
+    {{template "favicons"}}
+    {{template "social-cards"}}
+
+    {{with .Stylesheets}}
+    {{range .}}
+    <link rel="stylesheet" href="{{.}}">{{end}}
+    {{end}}
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://typedgo.com",
+      "name": "TypedGo"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <a id="home" href="/">
+        <img
+             class="only-dark-mode"
+             style="width:128px"
+             srcset="/.assets/avatar@2x.png 256w, /.assets/avatar@3x.png 384w"
+             sizes="128w"
+             src="/.assets/avatar@1x.png"
+             alt="TypedGo avatar" />
+      </a>
+    </header>
+    {{.Markdown.Content}}
+  </body>
+
+</html>
+{{end}}
