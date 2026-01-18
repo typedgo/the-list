@@ -1,15 +1,3 @@
-# The List
+# Featured
 
-Compilation of Go tools to Go type safe.
-
-## Categories
-
-- [API](categories/api.md)
-- [Configuration](categories/configs.md)
-- [Database](categories/database.md)
-- [Miscellaneous](categories/miscellaneous.md)
-
-## About
-
-- [About](about)
-- [Review list](about/review.md)
+Winner of weekly posts in the [TypedGo Reddit community](https://www.reddit.com/r/TypedGo/) will be featured here.
