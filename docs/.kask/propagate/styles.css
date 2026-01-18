@@ -10,27 +10,25 @@
 
 html {
   color: light-dark(#444, #bbb);
-
   background-color: light-dark(#ffffff, #000);
 
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.2em;
+  font-size: 1em;
 
-  margin: 0 auto;
+  margin-inline: auto;
+  padding-bottom: 200px;
 
   scroll-behavior: smooth;
 }
 
 body {
-  width: max(100%, 1000px);
-  border: 1px solid #eee;
-  padding: max(20px, 5vw) max(20px, 5vw) 60vh;
+  width: 100%;
 
   display: grid;
-  grid-template-columns: minmax(calc(1em + 1vw), 1fr) minmax(700px, auto) minmax(calc(1em + 1vw), 1fr);
+  grid-template-columns: minmax(calc(1em + 1vw), 1fr) minmax(auto, 700px) minmax(calc(1em + 1vw), 1fr);
 
   & > * {
     grid-column: 2 / 3;
@@ -52,7 +50,7 @@ body {
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
-    color: light-dark(#000, #eee);
+    color: light-dark(#d7054e, #ff7caa);
     line-height: 2em;
 
     &:not(:first-child) {
@@ -60,10 +58,56 @@ body {
     }
   }
 
+  a:not(:visited) {
+    color: light-dark(#444, #bbb);
+  }
+
   p {
     line-height: 2em;
   }
 
   header {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 20px 50px;
+
+    #home {
+      font-size: 2em;
+      color: light-dark(#d7054e, #ff7caa);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 200ms ease-out;
+      padding: 20px;
+      margin-left: -20px;
+
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      & > .typeface {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        & > .typed-go {
+          transition: transform 200ms ease-out;
+          transform-origin: left top;
+        }
+        & > .the-list {
+          transition: transform 200ms ease-out;
+          transform-origin: left bottom;
+          margin-top: -20px;
+        }
+      }
+      &:not(:hover) > .typeface > .typed-go {
+        transform: scale(0.5);
+      }
+      &:hover > .typeface > .the-list {
+        transform: scale(0.5);
+      }
+
+      svg#olives {
+        fill: light-dark(#d7054e, #ff7caa);
+      }
+    }
   }
 }
